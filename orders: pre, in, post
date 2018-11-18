@@ -1,0 +1,48 @@
+class TreeNode:
+    def __init__(self, data):
+        self.data = data
+        self.left_child = None
+        self.right_child = None
+        self.parent = None
+
+
+def pre_order(value):
+    if value:
+        print(value.data)
+        pre_order(value.left_child)
+        pre_order(value.right_child)
+
+
+def in_order(value):
+    if value:
+        in_order(value.left_child)
+        print(value.data)
+        in_order(value.right_child)
+
+
+def post_order(value):
+    if value:
+        post_order(value.left_child)
+        post_order(value.right_child)
+        print(value.data)
+
+
+def main():
+    t = TreeNode(48)
+    t.left_child = TreeNode(67)
+    t.right_child = TreeNode(55)
+    t.left_child.right_child = TreeNode(34)
+
+    print "pre_ordered data"
+    pre_order(t)
+    print("*" * 20)
+    print "in_ordered data "
+    in_order(t)
+    print("*"*20)
+    print "post_ordered "
+    post_order(t)
+    print("*" * 20)
+
+
+main()
+
