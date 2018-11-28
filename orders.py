@@ -1,4 +1,4 @@
-# Only one class can be used
+
 class EveryNode:
     def __init__(self, nodevalue):
         self.left = None
